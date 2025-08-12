@@ -7,7 +7,7 @@
 
     <!-- Datos básicos del proyecto -->
     <groupId>com</groupId>
-    <artifactId>SENCE_proyecto_2</artifactId>
+    <artifactId>SENCE_proyecto_3</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

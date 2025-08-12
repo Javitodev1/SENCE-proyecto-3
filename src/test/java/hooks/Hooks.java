@@ -3,6 +3,7 @@ package hooks;
 import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import utils.DriverFactory;
@@ -25,4 +26,8 @@ public class Hooks {
             DriverFactory.driver.quit();
         }
     }
+     public static WebDriver getDriver() {
+        return DriverFactory.driver;
+    }
+
 }
