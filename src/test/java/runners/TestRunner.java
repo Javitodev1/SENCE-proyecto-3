@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
     features = "src/test/resources/features",
     glue = { "steps", "hooks" },
     monochrome = true,
-    tags = "@login",
+    tags = "@register",
     plugin = {
         "pretty",
         "summary",
