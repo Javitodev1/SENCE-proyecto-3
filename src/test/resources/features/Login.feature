@@ -1,4 +1,4 @@
-@login
+@login @HU_001
 Feature: Inicio de sesión
 
   Scenario Outline: Validar inicio de sesión con credenciales
