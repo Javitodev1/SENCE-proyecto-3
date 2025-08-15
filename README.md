@@ -63,6 +63,7 @@ Diseñar y automatizar escenarios de prueba que validen los flujos de **login** 
 - ✅ **Gherkin**: Escenarios redactados con `Given`, `When`, `Then`, `And`, `But`.
 - 🧪 **Hooks**: Inicialización y cierre del navegador con `@Before` y `@After`.
 - 🏷️ **Tags**: Uso de `@login`, `@register`, `@SmokeTest`, `@Regression` para filtrar pruebas.
+- 🙍 **Historias de Usuario (HU)**: use de tags `@HU001`, `@HU002`, `@HU003` para filtrar pruebas por historias.
 - 🔁 **Scenario Outline**: Parametrización de datos en login.
 - 📋 **Reportes**: Generación automática en HTML, JSON y XML.
 
