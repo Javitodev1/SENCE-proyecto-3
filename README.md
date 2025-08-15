@@ -18,23 +18,22 @@ Diseñar y automatizar escenarios de prueba que validen los flujos de **login** 
 ├── pom.xml.linux
 ├── pom.xml.window
 ├── README.md
-├── src
-│   └── test
-│       ├── java
-│       │   ├── hooks
-│       │   │   └── Hooks.java
-│       │   ├── runners
-│       │   │   └── TestRunner.java
-│       │   ├── steps
-│       │   │   ├── StepsLogin.java
-│       │   │   └── StepsRegistro.java
-│       │   └── utils
-│       │       └── DriverFactory.java
-│       └── resources
-│           └── features
-│               ├── Login.feature
-│               └── Registro.feature
-└── testng.xml
+└── src
+    └── test
+        ├── java
+        │   ├── hooks
+        │   │   └── Hooks.java
+        │   ├── runners
+        │   │   └── TestRunner.java
+        │   ├── steps
+        │   │   ├── StepsLogin.java
+        │   │   └── StepsRegistro.java
+        │   └── utils
+        │       └── DriverFactory.java
+        └── resources
+            └── features
+                ├── Login.feature
+                └── Registro.feature
 ```
 
 ## 🧪 Escenarios Implementados
@@ -72,6 +71,12 @@ Diseñar y automatizar escenarios de prueba que validen los flujos de **login** 
 Cada escenario está vinculado a una historia de usuario funcional. Los reportes generados incluyen el estado (`Passed`, `Failed`, `Skipped`) y permiten validar la cobertura de requerimientos.
 
 ## ▶️ Ejecución
+
+Renombrar Pom segun sistema operativo
+
+```bash
+mv pom.xml.window pom.xml
+```
 
 Para correr los tests:
 
