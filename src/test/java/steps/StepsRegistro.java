@@ -24,8 +24,9 @@ public class StepsRegistro {
     @Given("el usuario está en la página de registro")
     public void usuarioEnRegistro() {
         driver = Hooks.getDriver();
-        if (driver == null) throw new IllegalStateException("Driver no inicializado. Revisa Hooks.setUp()");
-        wait  = new WebDriverWait(driver, Duration.ofSeconds(12));
+        if (driver == null)
+            throw new IllegalStateException("Driver no inicializado. Revisa Hooks.setUp()");
+        wait = new WebDriverWait(driver, Duration.ofSeconds(12));
 
         // Ir directo a la Practice Form
         driver.get("https://demoqa.com/automation-practice-form");
@@ -39,12 +40,12 @@ public class StepsRegistro {
     public void ingresarDatos(String firstName, String lastName, String email, String gender, String mobile) {
         // Nombre / Apellido
         clearAndType(By.id("firstName"), firstName);
-        clearAndType(By.id("lastName"),  lastName);
+        clearAndType(By.id("lastName"), lastName);
 
-        // Email (puede venir vacío según el escenario)
+        // Email
         clearAndType(By.id("userEmail"), email);
 
-        // Género (label por texto visible)
+        // Género
         if (gender != null && !gender.isBlank()) {
             By genderLabel = By.xpath("//label[normalize-space(text())='" + gender + "']");
             safeClick(genderLabel);
@@ -70,30 +71,26 @@ public class StepsRegistro {
 
         assertTrue("El modal no contiene el texto esperado.", ok);
 
-        // Cerrar modal (si deseas mantener limpio el estado)
+        // Cerrar modal
         try {
             safeClick(By.id("closeLargeModal"));
-        } catch (Exception ignored) {}
+        } catch (Exception ignored) {
+        }
     }
 
     // ===================== But + Then (inválido) =====================
     @But("no completa todos los campos requeridos")
     public void noCompletaCamposRequeridos() {
         // Este step describe la condición; no requiere acción
-        // Podríamos marcar un flag si quisieras usarlo luego.
     }
 
     @Then("se marcan en rojo los campos requeridos incompletos")
     public void validarCamposRequeridosEnRojo() {
         // Verificar que exista al menos un campo requerido inválido después de enviar
-        // Usamos checkValidity() de HTML5 para confiabilidad (el borde rojo puede variar por CSS)
         Long invalidCount = (Long) ((JavascriptExecutor) driver).executeScript(
                 "return Array.from(document.querySelectorAll('input[required],textarea[required]'))" +
-                ".filter(el => !el.checkValidity()).length;"
-        );
+                        ".filter(el => !el.checkValidity()).length;");
 
-        // Si tu escenario dejó email vacío y no es requerido, esto seguirá detectando
-        // otros requeridos (por ejemplo, Gender, Mobile, First/Last Name) si faltan.
         assertTrue("No se detectaron campos requeridos inválidos (en rojo).", invalidCount != null && invalidCount > 0);
     }
 
@@ -107,16 +104,15 @@ public class StepsRegistro {
         }
     }
 
-
     /** Oculta overlays/ads comunes para evitar click interceptado */
     private void ocultarAds() {
         try {
             ((JavascriptExecutor) driver).executeScript(
-                "document.querySelectorAll(\"iframe[id^='google_ads_iframe'], " +
-                "div[id*='google_ads'], div[id*='Ad.Plus-Anchor'], " +
-                "div[class*='ads'], iframe[data-is-safeframe='true']\").forEach(e=>e.style.display='none');"
-            );
-        } catch (JavascriptException ignored) {}
+                    "document.querySelectorAll(\"iframe[id^='google_ads_iframe'], " +
+                            "div[id*='google_ads'], div[id*='Ad.Plus-Anchor'], " +
+                            "div[class*='ads'], iframe[data-is-safeframe='true']\").forEach(e=>e.style.display='none');");
+        } catch (JavascriptException ignored) {
+        }
     }
 
     /** Click robusto con scroll/espera y fallback JS */
@@ -139,7 +135,8 @@ public class StepsRegistro {
         try {
             wait.until(ExpectedConditions.elementToBeClickable(el)).click();
             return;
-        } catch (WebDriverException ignored) { }
+        } catch (WebDriverException ignored) {
+        }
 
         // Fallback final
         ((JavascriptExecutor) driver).executeScript("arguments[0].click();", el);
