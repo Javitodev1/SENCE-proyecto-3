@@ -8,7 +8,7 @@ Para verificar que el usuario pueda registrarse correctamente
     And hace clic en el botón de registro
     Then se muestra un modal de registro exitoso
 
-@register @HU_003
+@register @HU_003 @Regression
   Scenario: Registro inválido
     Given el usuario está en la página de registro
     When ingresa "", "Pausini", "", "Female", "9876543210"

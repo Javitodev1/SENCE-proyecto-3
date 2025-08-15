@@ -1,4 +1,4 @@
-@login @HU_001
+@login @HU_001 @SmokeTest
 Feature: Inicio de sesión
 
   Scenario Outline: Validar inicio de sesión con credenciales

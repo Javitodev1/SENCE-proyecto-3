@@ -97,8 +97,10 @@ Se generan automáticamente en la carpeta target/:
 
 ## 📋 Reporte de Ejecución
 
-| Escenario | Historia de Usuario | Tag | Estado |
-|-----------|---------------------|-----|--------|
-| Login exitoso | HU-001 | @login | Passed |
-| Registro válido | HU-002 | @register | Passed |
-| Registro inválido | HU-003 | @register | Passed |
+| Historia de Usuario | Escenario                                | Tags                        | Estado  |
+|---------------------|-------------------------------------------|-----------------------------|---------|
+| HU-001              | Validar inicio de sesión con credenciales | @login, @SmokeTest          | Passed  |
+| HU-001              | Validar inicio de sesión con credenciales | @login, @SmokeTest          | Passed  |
+| HU-001              | Validar inicio de sesión con credenciales | @login, @SmokeTest          | Passed  |
+| HU-002              | Registro válido                           | @register                   | Passed  |
+| HU-003              | Registro inválido                         | @register, @Regression      | Passed  |
