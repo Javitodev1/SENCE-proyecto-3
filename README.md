@@ -1,5 +1,10 @@
 # 🧪 Proyecto BDD con Java, Selenium y Cucumber
 
+## Integrantes
+- Leslie Aguayo
+- Jose Astudillo
+- Javier Fuentes
+
 Este proyecto implementa pruebas automatizadas para una aplicación web utilizando la metodología **Desarrollo Conducido por Comportamiento (BDD)**. Se emplea **Java**, **Cucumber**, **Selenium WebDriver** y **TestNG**, siguiendo las buenas prácticas de organización, trazabilidad y colaboración entre QA, Desarrollo y Negocio.
 
 ## 📌 Objetivo
